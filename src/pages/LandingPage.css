@@ -1,0 +1,22 @@
+.container {
+  height: 100%;
+}
+
+.content {
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+}
+
+#landingImage {
+  width: 90%;
+}
+
+.textContent {
+  width: 40%;
+}
+
+.imageContent {
+  justify-content: center;
+  width: 40%;
+}
