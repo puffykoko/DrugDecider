@@ -1,20 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import logo from "../assets/Logo-01.jpg";
 import "./Header.css";
 
 function Header() {
   return (
     <div className="customHeader flex">
       <div className="logoGroup flex">
+        <img src={logo} className="ddLogo" alt="Logo" />
         <Link to="/" id="DrugDecider">
           DrugDecider
         </Link>
-        <img
-          src="https://www.trzcacak.rs/myfile/full/528-5283927_grey-circle-png-circle.png"
-          className="ddLogo"
-          alt="Logo"
-        />
       </div>
       <div className="flex">
         <Link to="/form" className="headerLink">

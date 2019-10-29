@@ -14,12 +14,17 @@ a:hover {
   color: #1b9fff;
 }
 
+button {
+  outline: none;
+}
+
 .App {
   margin: 3% 15%;
 }
 
 .flex {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .inline {
