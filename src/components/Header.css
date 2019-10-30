@@ -1,0 +1,23 @@
+#DrugDecider {
+  text-decoration: none;
+  font-size: 2.5em;
+}
+
+.customHeader {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.logoGroup {
+  margin-bottom: -6pt;
+}
+
+.ddLogo {
+  height: 40pt;
+  margin-right: 10pt;
+}
+
+.headerLink {
+  margin-left: 20pt;
+  font-size: 1.2em;
+}
