@@ -4,6 +4,7 @@
 }
 
 .customHeader {
+  padding-top: 40pt;
   justify-content: space-between;
   align-items: flex-end;
 }
