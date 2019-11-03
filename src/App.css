@@ -20,10 +20,6 @@ button {
   flex-wrap: wrap;
 }
 
-.inline {
-  display: inline;
-}
-
 #page-container {
   margin: 0% 15%;
   position: relative;

@@ -5,7 +5,7 @@ import "./LandingPage.css";
 
 function LandingPage() {
   return (
-    <div className="content flex" id="content-wrap">
+    <div className="content flex">
       <div className="leftContent">
         <div className="text">
           <h2 className="largeText">Find what works for you.</h2>
