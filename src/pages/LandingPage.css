@@ -1,20 +1,19 @@
-.container {
-  height: 100%;
-}
-
 .content {
   justify-content: center;
   align-items: center;
-  height: 60%;
+  /* height: 100%; */
+  margin-top: 6%;
 }
 
 #landingImage {
   margin-top: 70px;
+  width: 100%;
 }
 
 .leftContent {
   width: 40%;
-  margin: 20px 3em;
+  min-width: 300px;
+  margin: 20px 0%;
 }
 
 .text {
@@ -22,8 +21,10 @@
 }
 
 .imageContent {
+  min-width: 350px;
   justify-content: center;
   width: 40%;
+  margin-left: 30px;
 }
 
 .startButton {

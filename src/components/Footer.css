@@ -1,0 +1,21 @@
+/* .customFooter {
+  position: relative;
+  bottom: 0;
+  height: 2.5rem;
+  width: 100%;
+} */
+
+.customFooter__divider {
+  width: 65%;
+  border-color: #cccccc;
+}
+
+.customFooter__links {
+  width: 50%;
+  justify-content: center;
+  margin: auto;
+}
+
+.footerLink {
+  margin: 2px 10px;
+}
