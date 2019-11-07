@@ -1,0 +1,7 @@
+.GraphContainer{
+  /*required by Chart.js*/
+  position: relative;
+  width: 40vw;
+  height: 60vh;
+  border: 1px solid grey;
+}
