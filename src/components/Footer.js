@@ -5,9 +5,9 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <div className="customFooter" id="footer">
+    <div className="customFooter flex" id="footer">
       <hr className="customFooter__divider" />
-      <div className="customFooter__links flex">
+      <div className="flex customFooter__links">
         <Link to="/research" className="footerLink">
           Our Research
         </Link>

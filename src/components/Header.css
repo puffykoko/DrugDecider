@@ -1,6 +1,6 @@
 #DrugDecider {
   text-decoration: none;
-  font-size: 2.5em;
+  font-size: calc(3vmin + 20px);
 }
 
 .customHeader {
@@ -10,15 +10,28 @@
 }
 
 .logoGroup {
-  margin-bottom: -6pt;
+  width: 30vw;
+  align-items: baseline;
 }
 
 .ddLogo {
   height: 40pt;
-  margin-right: 10pt;
 }
 
 .headerLink {
-  margin-left: 20pt;
-  font-size: 1.2em;
+  padding: calc(1vmin + 2px) calc(2vmin + 5px);
+  font-size: calc(2.5vmin + 5px);
+}
+
+@media only screen and (max-width: 800px) {
+
+  .logoGroup{
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 2vh;
+  }
+  .navBar{
+    width: 100%;
+    justify-content: center;
+  }
 }

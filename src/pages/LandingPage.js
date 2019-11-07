@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./LandingPage.css";
+import Graph from "../components/Graph";
 
 function LandingPage() {
   return (
@@ -19,6 +20,11 @@ function LandingPage() {
           Let's get started!
         </Link>
       </div>
+
+      <div className="imageContent flex">
+      <Graph/>
+      </div>
+      {/*
       <div className="imageContent flex">
         <img
           src="https://nathanbrixius.files.wordpress.com/2013/02/image3.png"
@@ -26,6 +32,7 @@ function LandingPage() {
           alt="Graph of results"
         />
       </div>
+    */}
     </div>
   );
 }

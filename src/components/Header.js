@@ -13,7 +13,7 @@ function Header() {
           DrugDecider
         </Link>
       </div>
-      <div className="flex">
+      <div className="navBar flex">
         <Link to="/form" className="headerLink">
           Get Started
         </Link>
