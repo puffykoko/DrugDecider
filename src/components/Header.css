@@ -4,7 +4,7 @@
 }
 
 .customHeader {
-  padding-top: 40pt;
+  padding-top: 50px;
   justify-content: space-between;
   align-items: flex-end;
 }
@@ -15,22 +15,22 @@
 }
 
 .ddLogo {
-  height: 40pt;
+  height: 50px;
+  margin: 0 10px;
 }
 
 .headerLink {
   padding: calc(1vmin + 2px) calc(2vmin + 5px);
-  font-size: calc(2.5vmin + 5px);
+  font-size: calc(1vw + 5px);
 }
 
 @media only screen and (max-width: 800px) {
-
-  .logoGroup{
+  .logoGroup {
     width: 100%;
     justify-content: center;
     margin-bottom: 2vh;
   }
-  .navBar{
+  .navBar {
     width: 100%;
     justify-content: center;
   }

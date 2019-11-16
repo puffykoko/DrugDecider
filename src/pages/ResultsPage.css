@@ -1,7 +1,58 @@
-.GraphContainer{
+.GraphContainer {
   /*required by Chart.js*/
   position: relative;
-  width: 40vw;
-  height: 60vh;
+  width: 40%;
+  height: 40%;
   border: 1px solid grey;
+}
+
+/* .tabs {
+  display: flex;
+  justify-content: center;
+} */
+
+.sections {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.section-1 {
+  width: 30%;
+}
+
+.section-2 {
+  width: 80%;
+}
+
+.section__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* .Collapsible {
+  width: 100%;
+} */
+
+.Collapsible {
+  margin: 30px 0;
+}
+
+.Collapsible__trigger {
+  background-color: #dddddd;
+  cursor: pointer;
+
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+}
+
+.Collapsible__contentInner {
+  padding: 0 10px;
+}
+
+.more-info {
+  color: #1b9fff;
+  float: right;
 }
