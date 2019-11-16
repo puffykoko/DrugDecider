@@ -2,6 +2,15 @@ import React from "react";
 // import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Collapsible from "react-collapsible";
 import Graph from "../components/Graph";
+import Graph2 from "../components/Graph2";
+import "./ResultsPage.css";
+
+const text =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, \
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
+ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
+velit esse cillum dolore eu fugiat nulla pariatur.";
 
 import "react-tabs/style/react-tabs.css";
 import "./ResultsPage.css";
@@ -9,7 +18,17 @@ import "./ResultsPage.css";
 function ResultsPage() {
   return (
     <div>
-      <Graph />
+      <div className="content">
+        <div className="section flex">
+          <div className="graphContainer">
+            <Graph />
+          </div>
+          <div className="mainText">
+            <h1> Your Results </h1>
+            <p> {text} </p>
+          </div>
+        </div>
+      </div>
       <div className="sections">
         <div className="section-2">
           <p className="section__title">Medications</p>

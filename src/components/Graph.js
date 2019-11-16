@@ -27,9 +27,21 @@ function Graph() {
   return (
     <Bar
       data={data}
-      width={100}
-      height={50}
-      options={{ maintainAspectRatio: true }}
+      options={{
+        maintainAspectRatio: false,
+        scales: {
+          xAxes: [
+            {
+              stacked: true
+            }
+          ],
+          yAxes: [
+            {
+              stacked: true
+            }
+          ]
+        }
+      }}
     />
   );
 }

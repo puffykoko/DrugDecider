@@ -6,6 +6,25 @@
   border: 1px solid grey;
 }
 
+.content {
+  margin: 15vh 0 10vh 0;
+}
+
+.section {
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.graphContainer {
+  width: 40%;
+  height: 40vh;
+}
+
+.mainText {
+  width: 40%;
+}
+
 /* .tabs {
   display: flex;
   justify-content: center;
