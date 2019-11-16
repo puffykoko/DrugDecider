@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./LandingPage.css";
 import Graph from "../components/Graph";
+import Graph2 from "../components/Graph2";
 
 function LandingPage() {
   return (

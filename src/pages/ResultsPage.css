@@ -1,7 +1,23 @@
-.GraphContainer{
-  /*required by Chart.js*/
-  position: relative;
-  width: 40vw;
-  height: 60vh;
-  border: 1px solid grey;
+*{
+  //border: 1px solid grey;
+  //box-sizing: border-box;
+}
+
+.content {
+  margin: 15vh 0 10vh 0;
+}
+
+.section{
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.graphContainer{
+  width: 40%;
+  height: 40vh;
+}
+
+.mainText{
+  width: 40%;
 }
