@@ -1,3 +1,7 @@
+/* * {
+  border: 1px solid grey;
+} */
+
 .GraphContainer {
   /*required by Chart.js*/
   position: relative;
@@ -8,6 +12,7 @@
 
 .content {
   margin: 15vh 0 10vh 0;
+  border: 1px solid grey;
 }
 
 .section {
@@ -34,7 +39,7 @@
   display: flex;
   justify-content: space-around;
   padding-top: 40px;
-  padding-bottom: 80px;
+  /* padding-bottom: 80px; */
 }
 
 .section-1 {
@@ -42,12 +47,13 @@
 }
 
 .section-2 {
-  width: 80%;
+  width: 70%;
 }
 
 .section__title {
   font-size: 1.5rem;
   font-weight: 600;
+  text-align: center;
 }
 
 /* .Collapsible {
@@ -74,4 +80,11 @@
 .more-info {
   color: #1b9fff;
   float: right;
+}
+
+.collapsible-text {
+  font-size: 1.1rem;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
 }

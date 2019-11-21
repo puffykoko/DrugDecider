@@ -30,6 +30,7 @@ button {
 #content-wrap {
   padding-top: 3rem + 40pt;
   padding-bottom: 2.5rem; /* Footer height */
+  border: solid 2px pink;
 }
 
 #footer {
@@ -39,13 +40,11 @@ button {
   height: 2.5rem; /* Footer height */
 }
 
-
 @media only screen and (max-width: 900px) {
   #page-container {
     margin: 0% 5%;
   }
 }
-
 
 @media only screen and (max-width: 600px) {
   #page-container {

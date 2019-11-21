@@ -2,7 +2,8 @@ import React from "react";
 // import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Collapsible from "react-collapsible";
 import Graph from "../components/Graph";
-import Graph2 from "../components/Graph2";
+import triangle from "../assets/triangle.svg";
+// import Graph2 from "../components/Graph2";
 import "./ResultsPage.css";
 
 const text =
@@ -12,27 +13,54 @@ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
 velit esse cillum dolore eu fugiat nulla pariatur.";
 
-import "react-tabs/style/react-tabs.css";
-import "./ResultsPage.css";
-
 function ResultsPage() {
   return (
-    <div>
-      <div className="content">
-        <div className="section flex">
-          <div className="graphContainer">
-            <Graph />
-          </div>
-          <div className="mainText">
-            <h1> Your Results </h1>
-            <p> {text} </p>
-          </div>
+    <div className="content">
+      <div className="section flex">
+        <div className="graphContainer">
+          <Graph />
+        </div>
+        <div className="mainText">
+          <h1> Your Results </h1>
+          <p> {text} </p>
         </div>
       </div>
       <div className="sections">
         <div className="section-2">
           <p className="section__title">Medications</p>
-          <Collapsible trigger="Sertraline">
+          <Collapsible
+            trigger={
+              <span className="collapsible-text">
+                <span>Sertraline</span>
+                <img
+                  src={triangle}
+                  alt="Dropdown arrow"
+                  style={{
+                    float: "right",
+                    width: "15px",
+                    transition: "0.5s"
+                  }}
+                />
+              </span>
+            }
+            triggerWhenOpen={
+              <span className="collapsible-text">
+                <span>Sertraline</span>
+                <img
+                  src={triangle}
+                  alt="Dropdown arrow"
+                  style={{
+                    float: "right",
+                    width: "15px",
+                    transform: "rotate(-180deg)",
+                    transition: "0.5s"
+                  }}
+                />
+              </span>
+            }
+            transitionTime={300}
+            easing="ease"
+          >
             <p>
               Sertraline is an antidepressant in a group of drugs called
               selective serotonin reuptake inhibitors (SSRIs). Sertraline
@@ -46,7 +74,7 @@ function ResultsPage() {
               More information
             </a>
           </Collapsible>
-          <Collapsible trigger="Alprazolam">
+          <Collapsible trigger="Alprazolam" transitionTime={300} easing="ease">
             <p>
               Alprazolam is a benzodiazepine. It affects chemicals in the brain
               that may be unbalanced in people with anxiety. Alprazolam is used
@@ -60,7 +88,7 @@ function ResultsPage() {
               More information
             </a>
           </Collapsible>
-          <Collapsible trigger="Prozac">
+          <Collapsible trigger="Prozac" transitionTime={300} easing="ease">
             <p>
               Prozac (fluoxetine) is a selective serotonin reuptake inhibitor
               (SSRI) antidepressant. Fluoxetine affects chemicals in the brain

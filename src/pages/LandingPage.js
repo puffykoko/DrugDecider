@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./LandingPage.css";
 import Graph from "../components/Graph";
-import Graph2 from "../components/Graph2";
+// import Graph2 from "../components/Graph2";
 
 function LandingPage() {
   return (
@@ -23,7 +23,7 @@ function LandingPage() {
       </div>
 
       <div className="imageContent flex">
-      <Graph/>
+        <Graph />
       </div>
       {/*
       <div className="imageContent flex">
