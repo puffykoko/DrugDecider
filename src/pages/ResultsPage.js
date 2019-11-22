@@ -1,9 +1,9 @@
 import React from "react";
-// import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Collapsible from "react-collapsible";
 import Graph from "../components/Graph";
-import triangle from "../assets/triangle.svg";
 // import Graph2 from "../components/Graph2";
+
+import triangle from "../assets/triangle.svg";
 import "./ResultsPage.css";
 
 const text =
