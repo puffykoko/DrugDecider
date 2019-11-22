@@ -6,9 +6,15 @@ import SliderQuestion from "../components/SliderQuestion";
 
 function FormPage() {
   const data = [
+    "Blunted affect",
     "Emotional withdrawal",
     "Poor rapport",
+    "Passive apathetic social wit",
+    "Lack of spontaneity and flow",
+    "Motor retardation",
+    "Active social avoidance",
     "Delusions",
+    "Halucinatory behavior",
     "Grandiosity"
   ];
   const mapped_data = data.map((question, index) => (
