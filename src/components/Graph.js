@@ -3,22 +3,26 @@ import { Bar } from "react-chartjs-2";
 import "./Graph.css";
 
 const data = {
-  labels: ["Blue", "Yellow", "Green"],
+  labels: [
+    "Olanzapine",
+    "Paliperidone",
+    "Quetiapine",
+    "Placebo",
+    "Risperdal Consta",
+    "Paliperidone Palmitate"
+  ],
   datasets: [
     {
-      label: "# of Votes",
-      data: [12, 19, 10, 0],
+      label: "Estimated decrease in PANSS score",
+      data: [7, 6, 4, 3, 3, 1],
       backgroundColor: [
         "rgba(54, 162, 235, 1)",
         "rgba(255, 206, 86, 1)",
-        "rgba(22, 171, 67, 1)"
-      ],
-      borderColor: [
+        "rgba(22, 171, 67, 1)",
         "rgba(54, 162, 235, 1)",
         "rgba(255, 206, 86, 1)",
-        "rgba(21, 171, 67, 1)"
-      ],
-      borderWidth: 1
+        "rgba(22, 171, 67, 1)"
+      ]
     }
   ]
 };

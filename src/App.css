@@ -30,7 +30,7 @@ button {
 #content-wrap {
   padding-top: 3rem + 40pt;
   padding-bottom: 2.5rem; /* Footer height */
-  border: solid 2px pink;
+  /* border: solid 2px pink; */
 }
 
 #footer {

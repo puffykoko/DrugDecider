@@ -1,17 +1,12 @@
 import React from "react";
-import Collapsible from "react-collapsible";
+import CustomCollapsible from "../components/CustomCollapsible";
 import Graph from "../components/Graph";
 // import Graph2 from "../components/Graph2";
 
-import triangle from "../assets/triangle.svg";
 import "./ResultsPage.css";
 
 const text =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, \
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\
-ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\
-velit esse cillum dolore eu fugiat nulla pariatur.";
+  "Based on your responses, there is a high chance that antipsychotic medicine would be effective for you. Please consult your doctor for additional advice.";
 
 function ResultsPage() {
   return (
@@ -28,84 +23,21 @@ function ResultsPage() {
       <div className="sections">
         <div className="section-2">
           <p className="section__title">Medications</p>
-          <Collapsible
-            trigger={
-              <span className="collapsible-text">
-                <span>Sertraline</span>
-                <img
-                  src={triangle}
-                  alt="Dropdown arrow"
-                  style={{
-                    float: "right",
-                    width: "15px",
-                    transition: "0.5s"
-                  }}
-                />
-              </span>
-            }
-            triggerWhenOpen={
-              <span className="collapsible-text">
-                <span>Sertraline</span>
-                <img
-                  src={triangle}
-                  alt="Dropdown arrow"
-                  style={{
-                    float: "right",
-                    width: "15px",
-                    transform: "rotate(-180deg)",
-                    transition: "0.5s"
-                  }}
-                />
-              </span>
-            }
-            transitionTime={300}
-            easing="ease"
-          >
-            <p>
-              Sertraline is an antidepressant in a group of drugs called
-              selective serotonin reuptake inhibitors (SSRIs). Sertraline
-              affects chemicals in the brain that may be unbalanced in people
-              with depression, panic, anxiety, or obsessive-compulsive symptoms.
-            </p>
-            <a
-              className="more-info"
-              href="https://www.drugs.com/sertraline.html"
-            >
-              More information
-            </a>
-          </Collapsible>
-          <Collapsible trigger="Alprazolam" transitionTime={300} easing="ease">
-            <p>
-              Alprazolam is a benzodiazepine. It affects chemicals in the brain
-              that may be unbalanced in people with anxiety. Alprazolam is used
-              to treat anxiety disorders, panic disorders, and anxiety caused by
-              depression.
-            </p>
-            <a
-              className="more-info"
-              href="https://www.drugs.com/alprazolam.html"
-            >
-              More information
-            </a>
-          </Collapsible>
-          <Collapsible trigger="Prozac" transitionTime={300} easing="ease">
-            <p>
-              Prozac (fluoxetine) is a selective serotonin reuptake inhibitor
-              (SSRI) antidepressant. Fluoxetine affects chemicals in the brain
-              that may be unbalanced in people with depression, panic, anxiety,
-              or obsessive-compulsive symptoms. Prozac is used to treat major
-              depressive disorder, bulimia nervosa (an eating disorder),
-              obsessive-compulsive disorder, and panic disorder. Prozac is
-              sometimes used together with another medication called olanzapine
-              (Zyprexa) to treat manic depression caused by bipolar disorder.
-              This combination is also used to treat depression after at least 2
-              other medications have been tried without successful treatment of
-              symptoms.
-            </p>
-            <a className="more-info" href="https://www.drugs.com/prozac.html">
-              More information
-            </a>
-          </Collapsible>
+          <CustomCollapsible
+            drug="Olanzapine"
+            text="Olanzapine is an antipsychotic medication that affects chemicals in the brain. Olanzapine is used to treat the symptoms of psychotic conditions such as schizophrenia and bipolar disorder (manic depression) in adults and children who are at least 13 years old. Olanzapine is sometimes used together with other antipsychotic medications or antidepressants."
+            link="https://www.drugs.com/mtm/olanzapine.html"
+          />
+          <CustomCollapsible
+            drug="Paliperidone"
+            text="Paliperidone is an antipsychotic medicine that is used to treat schizophrenia in adults and teenagers who are at least 12 years old."
+            link="https://www.drugs.com/mtm/paliperidone.html"
+          />
+          <CustomCollapsible
+            drug="Quetiapine"
+            text="Quetiapine is an antipsychotic medicine that is used to treat schizophrenia in adults and children who are at least 13 years old. Quetiapine is used to treat bipolar disorder (manic depression) in adults and children who are at least 10 years old. Quetiapine is also used together with antidepressant medications to treat major depressive disorder in adults."
+            link="https://www.drugs.com/mtm/quetiapine.html"
+          />
         </div>
         {/* <div className="section-1">
           <p className="section__title">Other</p>
