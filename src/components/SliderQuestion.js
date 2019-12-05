@@ -14,6 +14,7 @@ function SliderQuestion(props) {
       <div className="slider">
         <input
           type="range"
+          name={props.name}
           min="1"
           max="7"
           defaultValue="4"
