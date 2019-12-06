@@ -2,6 +2,7 @@ import React from "react";
 // import { Link } from "react-router-dom";
 // import { CountryDropdown } from "react-country-region-selector";
 import SliderQuestion from "../components/SliderQuestion";
+import ResultsPage from "./ResultsPage";
 // import { template } from "@babel/core";
 
 // const createSliderWithTooltip = Slider.createSliderWithTooltip;
@@ -11,7 +12,9 @@ class FormPage extends React.Component {
     super(props);
     this.state = {
       country: "",
-      system: "Imperial"
+      system: "Imperial",
+      response: [],
+      results: false
     };
   }
 
@@ -20,7 +23,7 @@ class FormPage extends React.Component {
     this.setState({ country: e });
   };
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     event.preventDefault();
     const data = new FormData(event.target);
     let json = {};
@@ -39,62 +42,30 @@ class FormPage extends React.Component {
 
     console.log(json);
 
-    // json = {
-    //   bp: 110,
-    //   treatment_gender: "M",
-    //   treatment_age: 21,
-    //   treatment_DX_Age: 16,
-    //   treatment_BMI: 25.96803329,
-    //   BLUNTEDAFFECT: 2,
-    //   EMOTIONALWITHDRAWAL: 3,
-    //   POORRAPPORT: 3,
-    //   PASSIVEAPATHETICSOCIALWITHDRAWAL: 2,
-    //   LACKOFSPONTANEITYANDFLOWOFCONVERSATION: 3,
-    //   MOTORRETARDATION: 1,
-    //   ACTIVESOCIALAVOIDANCE: 2,
-    //   DELUSIONS: 6,
-    //   HALLUCINATORYBEHAVIOUR: 6,
-    //   GRANDIOSITY: 2,
-    //   SUSPICIOUSNESSPERSECUTION: 5,
-    //   STEREOTYPEDTHINKING: 4,
-    //   SOMATICCONCERN: 1,
-    //   UNUSUALTHOUGHTCONTENT: 5,
-    //   LACKOFJUDGEMENTANDINSIGHT: 3,
-    //   CONCEPTUALDISORGANISATION: 6,
-    //   DIFFICULTYINABSTRACTTHINKING: 5,
-    //   MANNERISMSANDPOSTURING: 4,
-    //   POORATTENTION: 4,
-    //   DISTURBANCEOFVOLITION: 2,
-    //   PREOCCUPATION: 4,
-    //   DISORIENTATION: 2,
-    //   EXCITEMENT: 6,
-    //   HOSTILITY: 6,
-    //   UNCOOPERATIVENESS: 5,
-    //   POORIMPULSECONTROL: 5,
-    //   ANXIETY: 5,
-    //   GUILTFEELINGS: 3,
-    //   TENSION: 4,
-    //   DEPRESSION: 1,
-    //   treatment_DX_country: "USA",
-    //   treatment_DX: "SCHIZOPHRENIA"
-    // };
+    const URL = "http://localhost:5500";
+    // const URL = "https://drugdecidertest.herokuapp.com";
 
-    // console.log(json);
-
-    // json = JSON.stringify(json, function(k, v) {
-    //   if (Number.isInteger(v)) {
-    //     return v + 0.0;
-    //   }
-    //   return v;
-    // }).replace(/\.0000000001/g, ".0");
-    const URL = "";
-
-    fetch(`${URL}/api/v1/predict`, {
+    const response = await fetch(`${URL}/api/v1/predict`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(json)
+    });
+
+    const results = await response.json();
+    let sortable = [];
+
+    for (let i in results) {
+      sortable.push([i, parseFloat(results[i])]);
+    }
+    sortable.sort((a, b) => {
+      return b[1] - a[1];
+    });
+
+    this.setState({
+      response: sortable,
+      results: true
     });
   };
 
@@ -174,60 +145,37 @@ class FormPage extends React.Component {
       />
     ));
 
-    return (
-      <div className="content">
-        <form
-          onSubmit={this.handleSubmit}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            marginBottom: "15%"
-          }}
-        >
-          <input hidden readOnly type="number" name="bp" value={110} />
-
-          <div
-          style={{
-            border: "1px solid rgb(235,235,235,1)",
-            borderRadius: "5px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignContent: "center",
-            alignItems: "center",
-            backgroundColor: "rgba(253,253,253,.5)",
-
-            //marginBottom: "30px",
-            padding: "10px",
-            paddingTop: "30px",
-            width: "70vw",
-            marginBottom: "40px",
-
-          }}
+    if (!this.state.results) {
+      return (
+        <div className="content">
+          <form
+            onSubmit={this.handleSubmit}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              marginBottom: "15%"
+            }}
           >
-
-
-
-          <div className="question">
-            <p className="question-title">Please select your gender.</p>
-            <input type="radio" name="treatment_gender" value="M" /> Male
-            <br />
-            <input type="radio" name="treatment_gender" value="F" /> Female
-            <br />
-          </div>
-          <div className="question">
-            <p className="question-title">
-              How old were you when you were diagnosed?
-            </p>
-            <input type="number" name="treatment_DX_age" min="18" max="85" />
-          </div>
-          <div className="question">
-            <p className="question-title">How old are you now?</p>
-            <input type="number" name="treatment_age" min="18" max="85" />
-          </div>
-          </div>
-          {/* <div className="question">
+            <input hidden readOnly type="number" name="bp" value={110} />
+            <div className="question">
+              <p className="question-title">Please select your gender.</p>
+              <input type="radio" name="treatment_gender" value="M" /> Male
+              <br />
+              <input type="radio" name="treatment_gender" value="F" /> Female
+              <br />
+            </div>
+            <div className="question">
+              <p className="question-title">
+                How old were you when you were diagnosed?
+              </p>
+              <input type="number" name="treatment_DX_Age" min="18" max="85" />
+            </div>
+            <div className="question">
+              <p className="question-title">How old are you now?</p>
+              <input type="number" name="treatment_age" min="18" max="85" />
+            </div>
+            {/* <div className="question">
             <p className="question-title">
               Please enter your height and weight.
             </p>
@@ -235,35 +183,32 @@ class FormPage extends React.Component {
             <input type="radio" name="system" value="Metric" /> Metric
             <input type="number" value={this.state.height} />
           </div> */}
-          <input
-            hidden
-            checked
-            readOnly
-            type="radio"
-            name="treatment_BMI"
-            value={22}
-          />
-
-
-          <div
-          style={{
-            border: "1px solid rgb(240,240,240,1)",
-            borderRadius: "5px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignContent: "center",
-            alignItems: "center",
-            backgroundColor: "rgba(253,253,253,.5)",
-            paddingTop: "70px",
-            marginBottom: "30px",
-            width: "70vw",
-
-          }}
-          >
-          {mapped_data}
-          </div>
-          {/* <CountryDropdown
+            <input
+              hidden
+              checked
+              readOnly
+              type="radio"
+              name="treatment_BMI"
+              value={22}
+            />
+            <div
+              style={{
+                border: "1px solid rgb(240,240,240,1)",
+                borderRadius: "5px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignContent: "center",
+                alignItems: "center",
+                backgroundColor: "rgba(253,253,253,.5)",
+                paddingTop: "70px",
+                marginBottom: "30px",
+                width: "70vw"
+              }}
+            >
+              {mapped_data}
+            </div>
+            {/* <CountryDropdown
             value={this.state.country}
             onChange={this.handleChange}
             name="treatment_DX_country"
@@ -273,32 +218,35 @@ class FormPage extends React.Component {
               marginBottom: "80px"
             }}
           /> */}
-          <input
-            hidden
-            checked
-            readOnly
-            type="radio"
-            name="treatment_DX_country"
-            value="USA"
-          />
-          <input
-            hidden
-            checked
-            readOnly
-            type="radio"
-            name="treatment_DX"
-            value="SCHIZOPHRENIA"
-          />
-          <button
-            type="submit"
-            className="startButton"
-            style={{ border: "none", cursor: "pointer" }}
-          >
-            Submit
-          </button>
-        </form>
-      </div>
-    );
+            <input
+              hidden
+              checked
+              readOnly
+              type="radio"
+              name="treatment_DX_country"
+              value="USA"
+            />
+            <input
+              hidden
+              checked
+              readOnly
+              type="radio"
+              name="treatment_DX"
+              value="SCHIZOPHRENIA"
+            />
+            <button
+              type="submit"
+              className="startButton"
+              style={{ border: "none", cursor: "pointer" }}
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      );
+    } else {
+      return <ResultsPage data={this.state.response} />;
+    }
   }
 }
 
