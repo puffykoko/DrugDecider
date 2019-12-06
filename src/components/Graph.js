@@ -27,7 +27,7 @@ const data = {
   ]
 };
 
-function Graph() {
+function Graph(props) {
   return (
     <Bar
       data={data}
