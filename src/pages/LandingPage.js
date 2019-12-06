@@ -13,8 +13,7 @@ function LandingPage() {
           <h2 className="largeText">Find what works for you.</h2>
           <p>
             Drug Decider helps patients find the right medication by analyzing
-            their medical history. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Sed suscipit, massa sit amet euismod scelerisque.
+            their symptoms and health conditions. 
           </p>
         </div>
         <Link to="/form" className="startButton">
