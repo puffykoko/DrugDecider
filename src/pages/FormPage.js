@@ -42,8 +42,8 @@ class FormPage extends React.Component {
 
     console.log(json);
 
-    // const URL = "http://164.67.65.109:5500";
-    const URL = "https://drugdecidertest.herokuapp.com";
+    const URL = "http://localhost:5500";
+    // const URL = "https://drugdecidertest.herokuapp.com";
 
     const response = await fetch(`${URL}/api/v1/predict`, {
       method: "POST",
@@ -162,36 +162,18 @@ class FormPage extends React.Component {
               <p className="question-title">Please select your gender.</p>
               <input type="radio" name="treatment_gender" value="M" /> Male
               <br />
-              <input
-                checked
-                type="radio"
-                name="treatment_gender"
-                value="F"
-              />{" "}
-              Female
+              <input type="radio" name="treatment_gender" value="F" /> Female
               <br />
             </div>
             <div className="question">
               <p className="question-title">
                 How old were you when you were diagnosed?
               </p>
-              <input
-                value={18}
-                type="number"
-                name="treatment_DX_Age"
-                min="18"
-                max="85"
-              />
+              <input type="number" name="treatment_DX_Age" min="18" max="85" />
             </div>
             <div className="question">
               <p className="question-title">How old are you now?</p>
-              <input
-                value={21}
-                type="number"
-                name="treatment_age"
-                min="18"
-                max="85"
-              />
+              <input type="number" name="treatment_age" min="18" max="85" />
             </div>
             {/* <div className="question">
             <p className="question-title">
