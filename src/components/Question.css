@@ -1,10 +1,12 @@
 .question {
   width: 80%;
   margin-bottom: 40px;
+    //border: 1px solid grey;
 }
 
 .question-title {
   text-align: left;
+    //border: 1px solid grey;
 }
 
 .slider {
@@ -13,6 +15,52 @@
   align-items: center;
   /* justify-content: space-between;
   width: 60%; */
-  margin: 40px 10px;
-  margin-bottom: 60px;
+  margin: 50px 0px;
+  //width: 680px;
+  //margin-bottom: 5px;
+  //border: 1px solid grey;
+}
+
+/* The slider itself */
+.bar {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 5px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: .8; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  box-sizing: border-box;
+  width: 700px;
+  padding: 0px 50px;
+}
+
+/* Mouse-over effects */
+.bar:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+.bar::-webkit-slider-thumb {
+  //opacity: .8;
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  border-radius: 10px;
+  background: #1b9fff;/* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+
+.bar::-moz-range-thumb {
+  //opacity: .8;
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  border-radius: 10px;
+  background: #1b9fff; /* Green background */
+  cursor: pointer; /* Cursor on hover */
 }

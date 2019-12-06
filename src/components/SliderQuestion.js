@@ -13,13 +13,14 @@ function SliderQuestion(props) {
       </label>
       <div className="slider">
         <input
+          className = "bar"
           type="range"
           name={props.name}
           min="1"
           max="7"
           defaultValue="4"
           step="1"
-          style={{ width: "600px" }}
+          style={{}}
         />
         <div
           style={{

@@ -186,6 +186,29 @@ class FormPage extends React.Component {
           }}
         >
           <input hidden readOnly type="number" name="bp" value={110} />
+
+          <div
+          style={{
+            border: "1px solid rgb(235,235,235,1)",
+            borderRadius: "5px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignContent: "center",
+            alignItems: "center",
+            backgroundColor: "rgba(253,253,253,.5)",
+
+            //marginBottom: "30px",
+            padding: "10px",
+            paddingTop: "30px",
+            width: "70vw",
+            marginBottom: "40px",
+
+          }}
+          >
+
+
+
           <div className="question">
             <p className="question-title">Please select your gender.</p>
             <input type="radio" name="treatment_gender" value="M" /> Male
@@ -203,6 +226,7 @@ class FormPage extends React.Component {
             <p className="question-title">How old are you now?</p>
             <input type="number" name="treatment_age" min="18" max="85" />
           </div>
+          </div>
           {/* <div className="question">
             <p className="question-title">
               Please enter your height and weight.
@@ -219,16 +243,26 @@ class FormPage extends React.Component {
             name="treatment_BMI"
             value={22}
           />
-          <hr
-            style={{
-              border: "none",
-              height: "1px",
-              width: "80%",
-              backgroundColor: "#ddd",
-              marginBottom: "50px"
-            }}
-          />
+
+
+          <div
+          style={{
+            border: "1px solid rgb(240,240,240,1)",
+            borderRadius: "5px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignContent: "center",
+            alignItems: "center",
+            backgroundColor: "rgba(253,253,253,.5)",
+            paddingTop: "70px",
+            marginBottom: "30px",
+            width: "70vw",
+
+          }}
+          >
           {mapped_data}
+          </div>
           {/* <CountryDropdown
             value={this.state.country}
             onChange={this.handleChange}
