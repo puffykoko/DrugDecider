@@ -209,16 +209,23 @@ class FormPage extends React.Component {
               name="treatment_BMI"
               value={22}
             />
-            <hr
+            <div
               style={{
-                border: "none",
-                height: "1px",
-                width: "80%",
-                backgroundColor: "#ddd",
-                marginBottom: "50px"
+                border: "1px solid rgb(240,240,240,1)",
+                borderRadius: "5px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignContent: "center",
+                alignItems: "center",
+                backgroundColor: "rgba(253,253,253,.5)",
+                paddingTop: "70px",
+                marginBottom: "30px",
+                width: "70vw"
               }}
-            />
-            {mapped_data}
+            >
+              {mapped_data}
+            </div>
             {/* <CountryDropdown
             value={this.state.country}
             onChange={this.handleChange}
