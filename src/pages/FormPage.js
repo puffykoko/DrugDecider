@@ -154,9 +154,23 @@ class FormPage extends React.Component {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              marginBottom: "15%"
+              marginBottom: "15%",
             }}
           >
+          <div
+            style={{
+              border: "1px solid rgb(240,240,240,1)",
+              borderRadius: "5px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignContent: "center",
+              alignItems: "center",
+              backgroundColor: "rgba(253,253,253,.5)",
+              paddingTop: "70px",
+              marginBottom: "50px",
+              width: "70vw"
+            }}>
             <input hidden readOnly type="number" name="bp" value={110} />
             <div className="question">
               <p className="question-title">Please select your gender.</p>
@@ -191,6 +205,7 @@ class FormPage extends React.Component {
               name="treatment_BMI"
               value={22}
             />
+            </div>
             <div
               style={{
                 border: "1px solid rgb(240,240,240,1)",
