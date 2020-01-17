@@ -42,7 +42,7 @@ class FormPage extends React.Component {
 
     console.log(json);
 
-    const URL = "http://localhost:5500";
+    const URL = "http://169.232.114.32:8000";
     // const URL = "https://drugdecidertest.herokuapp.com";
 
     const response = await fetch(`${URL}/api/v1/predict`, {
@@ -154,42 +154,48 @@ class FormPage extends React.Component {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              marginBottom: "15%",
+              marginBottom: "15%"
             }}
           >
-          <div
-            style={{
-              border: "1px solid rgb(240,240,240,1)",
-              borderRadius: "5px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignContent: "center",
-              alignItems: "center",
-              backgroundColor: "rgba(253,253,253,.5)",
-              paddingTop: "70px",
-              marginBottom: "50px",
-              width: "70vw"
-            }}>
-            <input hidden readOnly type="number" name="bp" value={110} />
-            <div className="question">
-              <p className="question-title">Please select your gender.</p>
-              <input type="radio" name="treatment_gender" value="M" /> Male
-              <br />
-              <input type="radio" name="treatment_gender" value="F" /> Female
-              <br />
-            </div>
-            <div className="question">
-              <p className="question-title">
-                How old were you when you were diagnosed?
-              </p>
-              <input type="number" name="treatment_DX_Age" min="18" max="85" />
-            </div>
-            <div className="question">
-              <p className="question-title">How old are you now?</p>
-              <input type="number" name="treatment_age" min="18" max="85" />
-            </div>
-            {/* <div className="question">
+            <div
+              style={{
+                border: "1px solid rgb(240,240,240,1)",
+                borderRadius: "5px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignContent: "center",
+                alignItems: "center",
+                backgroundColor: "rgba(253,253,253,.5)",
+                paddingTop: "70px",
+                marginBottom: "50px",
+                width: "70vw"
+              }}
+            >
+              <input hidden readOnly type="number" name="bp" value={110} />
+              <div className="question">
+                <p className="question-title">Please select your gender.</p>
+                <input type="radio" name="treatment_gender" value="M" /> Male
+                <br />
+                <input type="radio" name="treatment_gender" value="F" /> Female
+                <br />
+              </div>
+              <div className="question">
+                <p className="question-title">
+                  How old were you when you were diagnosed?
+                </p>
+                <input
+                  type="number"
+                  name="treatment_DX_Age"
+                  min="18"
+                  max="85"
+                />
+              </div>
+              <div className="question">
+                <p className="question-title">How old are you now?</p>
+                <input type="number" name="treatment_age" min="18" max="85" />
+              </div>
+              {/* <div className="question">
             <p className="question-title">
               Please enter your height and weight.
             </p>
@@ -197,14 +203,14 @@ class FormPage extends React.Component {
             <input type="radio" name="system" value="Metric" /> Metric
             <input type="number" value={this.state.height} />
           </div> */}
-            <input
-              hidden
-              checked
-              readOnly
-              type="radio"
-              name="treatment_BMI"
-              value={22}
-            />
+              <input
+                hidden
+                checked
+                readOnly
+                type="radio"
+                name="treatment_BMI"
+                value={22}
+              />
             </div>
             <div
               style={{
