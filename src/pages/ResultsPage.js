@@ -1,7 +1,6 @@
 import React from "react";
 import CustomCollapsible from "../components/CustomCollapsible";
 import ResultsGraph from "../components/ResultsGraph";
-// import Graph2 from "../components/Graph2";
 
 import "./ResultsPage.css";
 

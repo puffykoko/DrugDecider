@@ -15,17 +15,11 @@ function QuestionSet(props) {
   return (
     <div
       style={{
-        border: "1px solid rgb(240,240,240,1)",
-        borderRadius: "5px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignContent: "center",
         alignItems: "center",
-        backgroundColor: "rgba(253,253,253,.5)",
-        paddingTop: "70px",
-        marginBottom: "30px",
-        width: "70vw"
       }}
     >
     {mapped_data}
