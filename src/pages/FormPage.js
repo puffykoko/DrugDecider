@@ -3,8 +3,9 @@ import React from "react";
 // import { CountryDropdown } from "react-country-region-selector";
 //import SliderQuestion from "../components/SliderQuestion";
 import ResultsPage from "./ResultsPage";
-import QuestionSet from "../components/QuestionSet"
-import ProgressBar from "../components/ProgressBar"
+import QuestionSet from "../components/Form/QuestionSet"
+import ProgressBar from "../components/Form/ProgressBar"
+import PanssSet from "../components/Form/PanssSet"
 // import { template } from "@babel/core";
 
 // const createSliderWithTooltip = Slider.createSliderWithTooltip;
@@ -18,7 +19,7 @@ class FormPage extends React.Component {
       response: [],
       results: false,
       page: 0,
-      numPages: 4,
+      numPages: 7,
     };
 
     this.nextPage = this.nextPage.bind(this);
@@ -28,15 +29,17 @@ class FormPage extends React.Component {
 
   nextPage() {
     this.setState(state => ({
-    page : state.page + 1,
+    page : state.page < state.numPages - 1 ? state.page + 1 : state.page,
   }));
-    window.scroll({top: 0, left: 0, behavior: 'smooth'});
+    window.scroll({top: 0, left: 0});
   }
 
   previousPage() {
+
     this.setState(state => ({
-    page : state.page - 1,
+    page : state.page > 0 ? state.page - 1 : state.page,
   }));
+    window.scroll({top: 0, left: 0});
   }
 
   handleChange = e => {
@@ -134,46 +137,47 @@ class FormPage extends React.Component {
     ];
 
     const data_names1 = [
-      "BLUNTEDAFFECT",
-      "EMOTIONALWITHDRAWAL",
-      "POORRAPPORT",
-      "PASSIVEAPATHETICSOCIALWITHDRAWAL",
-      "LACKOFSPONTANEITYANDFLOWOFCONVERSATION",
-      "MOTORRETARDATION",
-      "ACTIVESOCIALAVOIDANCE",
+      "BLUNTED AFFECT",
+      "EMOTIONAL WITHDRAWAL",
+      "POOR RAPPORT",
+      "PASSIVE APATHETIC SOCIAL WITHDRAWAL",
+      "LACK OF SPONTANEITY AND FLOW OF CONVERSATION",
+      "MOTOR RETARDATION",
+      "ACTIVE SOCIAL AVOIDANCE",
       "DELUSIONS",
-      "HALLUCINATORYBEHAVIOUR",
+      "HALLUCINATORY BEHAVIOUR",
       "GRANDIOSITY",
     ];
 
     const data_names2 = [
 
-      "SUSPICIOUSNESSPERSECUTION",
-      "STEREOTYPEDTHINKING",
-      "SOMATICCONCERN",
-      "UNUSUALTHOUGHTCONTENT",
+      "SUSPICIOUSNESS PERSECUTION",
+      "STEREOTYPED THINKING",
+      "SOMATIC CONCERN",
+      "UNUSUAL THOUGHT CONTENT",
       "TENSION",
       "EXCITEMENT",
       "DEPRESSION",
       "DISORIENTATION",
       "ANXIETY",
-      "LACKOFJUDGEMENTANDINSIGHT",
+      "LACK OF JUDGEMENT AND INSIGHT",
     ];
 
     const data_names3 = [
-      "CONCEPTUALDISORGANISATION",
-      "DIFFICULTYINABSTRACTTHINKING",
-      "MANNERISMSANDPOSTURING",
-      "POORATTENTION",
+      "CONCEPTUAL DISORGANISATION",
+      "DIFFICULTY IN ABSTRACT THINKING",
+      "MANNERISMS AND POSTURING",
+      "POOR ATTENTION",
       "PREOCCUPATION",
-      "DISTURBANCEOFVOLITION",
+      "DISTURBANCE OF VOLITION",
       "HOSTILITY",
       "UNCOOPERATIVENESS",
-      "POORIMPULSECONTROL",
-      "GUILTFEELINGS"
+      "POOR IMPULSE CONTROL",
+      "GUILT FEELINGS"
     ];
 
-    const num_pages = 4;
+    const num_pages = 7;
+
 
     if (!this.state.results) {
       return (
@@ -204,6 +208,7 @@ class FormPage extends React.Component {
             >
               <h1> Basic Information </h1>
               <ProgressBar numBars = {num_pages} curBar = {this.state.page}/>
+
               <div style = {{marginTop: "10vh"}}>
                   {this.state.page === 0 &&
                     <div>
@@ -258,9 +263,13 @@ class FormPage extends React.Component {
               <div style = {{
                 marginTop: 20,
               }}>
-              {this.state.page === 1 && <QuestionSet data = {data1} data_names = {data_names1}/>}
-              {this.state.page === 2 && <QuestionSet data = {data2} data_names = {data_names2}/>}
-              {this.state.page === 3 && <QuestionSet data = {data3} data_names = {data_names3}/>}
+              {this.state.page === 1 && <PanssSet data = {data1} data_names = {data_names1} start = {0}/>}
+              {this.state.page === 2 && <PanssSet data = {data2} data_names = {data_names2} start = {10}/>}
+              {this.state.page === 3 && <PanssSet data = {data3} data_names = {data_names3} start = {20}/>}
+              {this.state.page === 4 && <QuestionSet data = {data1} data_names = {data_names1} start = {0}/>}
+              {this.state.page === 5 && <QuestionSet data = {data2} data_names = {data_names2} start = {10}/>}
+              {this.state.page === 6 && <QuestionSet data = {data3} data_names = {data_names3} start = {20}/>}
+
               </div>
 
             </div>
@@ -295,6 +304,7 @@ class FormPage extends React.Component {
               name="treatment_DX"
               value="SCHIZOPHRENIA"
             />
+
 
             <div style={{
               display: "flex",
@@ -331,7 +341,10 @@ class FormPage extends React.Component {
             >
               Submit
             </button>
+
+
           }
+
           </form>
         </div>
       );
