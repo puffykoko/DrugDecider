@@ -13,12 +13,13 @@ function SliderQuestion(props) {
       </label>
       <div className="slider">
         <input
-          className = "bar"
+          className="bar"
           type="range"
           name={props.name}
+          value={props.value}
+          onChange={e => props.saveAnswer(e.target.value, props.name)}
           min="1"
           max="7"
-          defaultValue="4"
           step="1"
           style={{}}
         />
