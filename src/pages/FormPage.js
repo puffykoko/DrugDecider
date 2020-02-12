@@ -2,8 +2,9 @@ import React from "react";
 // import { Link } from "react-router-dom";
 // import { CountryDropdown } from "react-country-region-selector";
 import ResultsPage from "./ResultsPage";
-import QuestionSet from "../components/QuestionSet";
-import ProgressBar from "../components/ProgressBar";
+import QuestionSet from "../components/Form/QuestionSet";
+import ProgressBar from "../components/Form/ProgressBar";
+import PanssSet from "../components/Form/PanssSet";
 // import { template } from "@babel/core";
 
 import {
@@ -31,7 +32,7 @@ class FormPage extends React.Component {
       response: [],
       results: false,
       page: 0,
-      numPages: 4
+      numPages: 7
     };
 
     this.nextPage = this.nextPage.bind(this);
@@ -50,15 +51,16 @@ class FormPage extends React.Component {
   nextPage() {
     console.log(this.state.answers);
     this.setState(state => ({
-      page: state.page + 1
+      page: state.page < state.numPages - 1 ? state.page + 1 : state.page
     }));
-    window.scroll({ top: 0, left: 0, behavior: "smooth" });
+    window.scroll({ top: 0, left: 0 });
   }
 
   previousPage() {
     this.setState(state => ({
-      page: state.page - 1
+      page: state.page > 0 ? state.page - 1 : state.page
     }));
+    window.scroll({ top: 0, left: 0 });
   }
 
   handleChange = e => {
@@ -121,7 +123,7 @@ class FormPage extends React.Component {
   };
 
   render() {
-    const num_pages = 4;
+    const num_pages = this.state.numPages;
 
     if (!this.state.results) {
       return (
@@ -211,13 +213,23 @@ class FormPage extends React.Component {
                     </div>
 
                     {/* <div className="question">
-            <p className="question-title">
-              Please enter your height and weight.
-            </p>
-            <input type="radio" name="system" value="Imperial" /> Imperial
-            <input type="radio" name="system" value="Metric" /> Metric
-            <input type="number" value={this.state.height} />
-          </div> */}
+                      <p className="question-title">
+                        Please enter your height and weight.
+                      </p>
+                      <input type="radio" name="system" value="Imperial" /> Imperial
+                      <input type="radio" name="system" value="Metric" /> Metric
+                      <input type="number" value={this.state.height} />
+                    </div> */}
+                    {/* <CountryDropdown
+                      value={this.state.country}
+                      onChange={this.handleCountryChange}
+                      name="treatment_DX_country"
+                      priorityOptions={["US"]}
+                      valueType="short"
+                      style={{
+                        marginBottom: "80px"
+                      }}
+                    /> */}
                     <input
                       hidden
                       checked
@@ -228,66 +240,79 @@ class FormPage extends React.Component {
                     />
                   </div>
                 )}
-
-                <div
-                  style={{
-                    marginTop: 20
-                  }}
-                >
-                  {this.state.page === 1 && (
-                    <QuestionSet
-                      data={data1}
-                      data_names={data_names1}
-                      saveAnswer={this.saveAnswer}
-                      answers={this.state.answers}
-                    />
-                  )}
-                  {this.state.page === 2 && (
-                    <QuestionSet
-                      data={data2}
-                      data_names={data_names2}
-                      saveAnswer={this.saveAnswer}
-                      answers={this.state.answers}
-                    />
-                  )}
-                  {this.state.page === 3 && (
-                    <QuestionSet
-                      data={data3}
-                      data_names={data_names3}
-                      saveAnswer={this.saveAnswer}
-                      answers={this.state.answers}
-                    />
-                  )}
-                </div>
               </div>
-            </div>
+              <div
+                style={{
+                  marginTop: 20
+                }}
+              >
+                {this.state.page === 1 && (
+                  <PanssSet
+                    data={data1}
+                    data_names={data_names1}
+                    start={0}
+                    saveAnswer={this.saveAnswer}
+                    answers={this.state.answers}
+                  />
+                )}
+                {this.state.page === 2 && (
+                  <PanssSet
+                    data={data2}
+                    data_names={data_names2}
+                    start={10}
+                    saveAnswer={this.saveAnswer}
+                    answers={this.state.answers}
+                  />
+                )}
+                {this.state.page === 3 && (
+                  <PanssSet
+                    data={data3}
+                    data_names={data_names3}
+                    start={20}
+                    saveAnswer={this.saveAnswer}
+                    answers={this.state.answers}
+                  />
+                )}
+                {this.state.page === 4 && (
+                  <QuestionSet
+                    data={data1}
+                    data_names={data_names1}
+                    start={0}
+                  />
+                )}
+                {this.state.page === 5 && (
+                  <QuestionSet
+                    data={data2}
+                    data_names={data_names2}
+                    start={10}
+                  />
+                )}
+                {this.state.page === 6 && (
+                  <QuestionSet
+                    data={data3}
+                    data_names={data_names3}
+                    start={20}
+                  />
+                )}
+              </div>
 
-            {/* <CountryDropdown
-            value={this.state.country}
-            onChange={this.handleCountryChange}
-            name="treatment_DX_country"
-            priorityOptions={["US"]}
-            valueType="short"
-            style={{
-              marginBottom: "80px"
-            }}
-          /> */}
-            <input
-              hidden
-              checked
-              readOnly
-              type="radio"
-              name="treatment_DX_country"
-              value="USA"
-            />
-            <input
-              hidden
-              checked
-              readOnly
-              type="radio"
-              name="treatment_DX"
-              value="SCHIZOPHRENIA"
-            />
+              <input
+                hidden
+                checked
+                readOnly
+                type="radio"
+                name="treatment_DX_country"
+                value="USA"
+              />
+              <input
+                hidden
+                checked
+                readOnly
+                type="radio"
+                name="treatment_DX"
+                value="SCHIZOPHRENIA"
+              />
+            </div>
 
             <div
               style={{

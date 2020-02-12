@@ -1,5 +1,5 @@
 import React from "react";
-import SliderQuestion from "../components/SliderQuestion";
+import SliderQuestion from "./SliderQuestion";
 
 function QuestionSet(props) {
   const data = props.data;
@@ -8,10 +8,10 @@ function QuestionSet(props) {
 
   const mapped_data = data.map((question, index) => (
     <SliderQuestion
-      key={index + 1}
-      index={index + 1}
+      key={props.start + index + 1}
+      index={props.start + index + 1}
       value={answers[data_names[index]]}
-      name={data_names[index]}
+      name={data_names[index].replace(/\s/g, "")}
       text={question}
       saveAnswer={props.saveAnswer}
     />
