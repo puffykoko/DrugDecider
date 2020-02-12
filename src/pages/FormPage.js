@@ -278,6 +278,8 @@ class FormPage extends React.Component {
                     data={data1}
                     data_names={data_names1}
                     start={0}
+                    saveAnswer={this.saveAnswer}
+                    answers={this.state.answers}
                   />
                 )}
                 {this.state.page === 5 && (
@@ -285,6 +287,8 @@ class FormPage extends React.Component {
                     data={data2}
                     data_names={data_names2}
                     start={10}
+                    saveAnswer={this.saveAnswer}
+                    answers={this.state.answers}
                   />
                 )}
                 {this.state.page === 6 && (
@@ -292,6 +296,8 @@ class FormPage extends React.Component {
                     data={data3}
                     data_names={data_names3}
                     start={20}
+                    saveAnswer={this.saveAnswer}
+                    answers={this.state.answers}
                   />
                 )}
               </div>
@@ -334,7 +340,6 @@ class FormPage extends React.Component {
 
               <button
                 onClick={this.nextPage}
-                type="submit"
                 className="startButton"
                 style={{
                   border: "none",
