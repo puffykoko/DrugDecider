@@ -2,9 +2,16 @@ import React from "react";
 // import { Link } from "react-router-dom";
 // import { CountryDropdown } from "react-country-region-selector";
 import ResultsPage from "./ResultsPage";
+<<<<<<< Updated upstream
 import QuestionSet from "../components/Form/QuestionSet";
 import ProgressBar from "../components/Form/ProgressBar";
 import PanssSet from "../components/Form/PanssSet";
+=======
+import QuestionSet from "../components/Form/QuestionSet"
+import ProgressBar from "../components/Form/ProgressBar"
+import PanssSet from "../components/Form/PanssSet"
+import "./FormPage.css"
+>>>>>>> Stashed changes
 // import { template } from "@babel/core";
 
 import {
@@ -138,6 +145,7 @@ class FormPage extends React.Component {
             }}
           >
             <div
+<<<<<<< Updated upstream
               style={{
                 border: "1px solid rgb(240,240,240,1)",
                 borderRadius: "15px",
@@ -145,6 +153,9 @@ class FormPage extends React.Component {
                 padding: "2.5vh 5vw 5vh 5vw",
                 width: "65vw"
               }}
+=======
+              className="FormContainer"
+>>>>>>> Stashed changes
             >
               <h1> Basic Information </h1>
               <ProgressBar numBars={num_pages} curBar={this.state.page} />
@@ -320,10 +331,75 @@ class FormPage extends React.Component {
               />
             </div>
 
+<<<<<<< Updated upstream
             <div
               style={{
                 display: "flex"
               }}
+=======
+
+
+
+            {/* <CountryDropdown
+            value={this.state.country}
+            onChange={this.handleChange}
+            name="treatment_DX_country"
+            priorityOptions={["US"]}
+            valueType="short"
+            style={{
+              marginBottom: "80px"
+            }}
+          /> */}
+            <input
+              hidden
+              checked
+              readOnly
+              type="radio"
+              name="treatment_DX_country"
+              value="USA"
+            />
+            <input
+              hidden
+              checked
+              readOnly
+              type="radio"
+              name="treatment_DX"
+              value="SCHIZOPHRENIA"
+            />
+
+
+            <div style={{
+              display: "flex",
+            }}>
+
+
+            <button
+              onClick = {this.previousPage}
+              className="startButton"
+              style={{ border: "none", cursor: "pointer", marginRight: "5px",
+              backgroundColor: this.state.page === 0 ? "#DCDCDC" : "#1b9fff"}}
+            >
+              Back
+            </button>
+
+            <button
+              onClick = {this.nextPage}
+              className="startButton"
+              style={{ border: "none", cursor: "pointer", backgroundColor: this.state.page === num_pages - 1 ? "#DCDCDC" : "#1b9fff"}}
+            >
+              Next
+            </button>
+
+          </div>
+
+
+
+            {this.state.page === num_pages - 1 &&
+            <button
+              type="submit"
+              className="startButton"
+              style={{ border: "none", cursor: "pointer" }}
+>>>>>>> Stashed changes
             >
               <button
                 onClick={this.previousPage}

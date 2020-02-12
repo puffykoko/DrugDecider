@@ -1,0 +1,13 @@
+.FormContainer{
+  border: 1px solid rgb(240,240,240,1);
+  border-radius: 15px;
+  background-color: rgba(221,221,221,.17);
+  padding: 2.5vh 5vw 5vh 5vw;
+  width: 65vw;
+}
+
+@media only screen and (max-width: 900px) {
+  .FormContainer {
+    width: 90vw;
+  }
+}
