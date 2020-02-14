@@ -11,10 +11,11 @@ function PanssQuestion(props) {
       className="question"
       style={{ display: "flex", justifyContent: "space-between" }}
     >
-      <label className="question-title">
+      <label className="panss question-title">
         {props.index}. {props.text}
       </label>
       <input
+        // required
         type="number"
         name={props.name}
         value={props.value}

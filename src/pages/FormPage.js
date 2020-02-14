@@ -22,9 +22,17 @@ class FormPage extends React.Component {
     super(props);
 
     let answers = {};
-    data_names1.forEach(option => (answers[option] = 4));
+    data_names1.forEach(option => {
+      answers[option] = 4;
+      // answers["PANSS_" + option] = "";
+    });
     data_names2.forEach(option => (answers[option] = 4));
     data_names3.forEach(option => (answers[option] = 4));
+
+    answers["treatment_BMI"] = 22;
+    answers["bp"] = 110;
+    answers["treatment_DX_country"] = "USA";
+    answers["treatment_DX"] = "SCHIZOPHRENIA";
 
     this.state = {
       country: "",
@@ -36,8 +44,8 @@ class FormPage extends React.Component {
       numPages: 7
     };
 
-    this.nextPage = this.nextPage.bind(this);
-    this.previousPage = this.previousPage.bind(this);
+    // this.nextPage = this.nextPage.bind(this);
+    // this.previousPage = this.previousPage.bind(this);
   }
 
   saveAnswer = (value, key) => {
@@ -49,24 +57,37 @@ class FormPage extends React.Component {
     });
   };
 
-  nextPage() {
+  nextPage = e => {
+    e.preventDefault();
+
     console.log(this.state.answers);
     this.setState(state => ({
       page: state.page < state.numPages - 1 ? state.page + 1 : state.page
     }));
     window.scroll({ top: 0, left: 0 });
-  }
+  };
 
-  previousPage() {
+  previousPage = e => {
+    e.preventDefault();
+
     this.setState(state => ({
       page: state.page > 0 ? state.page - 1 : state.page
     }));
     window.scroll({ top: 0, left: 0 });
-  }
+  };
 
   handleChange = e => {
+    e.preventDefault();
     let copy = this.state.answers;
-    copy[e.target.name] = e.target.value;
+    if (
+      e.target.name === "treatment_DX_Age" ||
+      e.target.name === "treatment_age"
+    ) {
+      copy[e.target.name] = parseInt(e.target.value);
+    } else {
+      copy[e.target.name] = e.target.value;
+    }
+
     this.setState({
       answers: copy
     });
@@ -79,48 +100,32 @@ class FormPage extends React.Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-    // const data = new FormData(event.target);
-    // let json = {};
+    const URL = "https://api.drugdecider.com";
 
-    // data.forEach((value, key) => {
-    //   if (
-    //     key !== "treatment_gender" &&
-    //     key !== "treatment_DX_country" &&
-    //     key !== "treatment_DX"
-    //   ) {
-    //     json[key] = parseInt(value);
-    //   } else {
-    //     json[key] = value;
-    //   }
-    // });
+    console.log(this.state.answers);
 
-    // console.log(json);
+    const response = await fetch(`${URL}/api/v1/predict`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(this.state.answers)
+    });
 
-    // const URL = "http://169.232.114.32:8000";
-    // // const URL = "https://drugdecidertest.herokuapp.com";
+    const results = await response.json();
+    let sortable = [];
 
-    // const response = await fetch(`${URL}/api/v1/predict`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   },
-    //   body: JSON.stringify(json)
-    // });
+    for (let i in results) {
+      sortable.push([i, parseFloat(results[i])]);
+    }
+    sortable.sort((a, b) => {
+      return b[1] - a[1];
+    });
 
-    // const results = await response.json();
-    // let sortable = [];
-
-    // for (let i in results) {
-    //   sortable.push([i, parseFloat(results[i])]);
-    // }
-    // sortable.sort((a, b) => {
-    //   return b[1] - a[1];
-    // });
-
-    // this.setState({
-    //   response: sortable,
-    //   results: true
-    // });
+    this.setState({
+      response: sortable,
+      results: true
+    });
   };
 
   render() {
@@ -144,18 +149,12 @@ class FormPage extends React.Component {
               <div style={{ marginTop: "10vh" }}>
                 {this.state.page === 0 && (
                   <div>
-                    <input
-                      hidden
-                      readOnly
-                      type="number"
-                      name="bp"
-                      value={110}
-                    />
                     <div className="question">
                       <p className="question-title">
                         Please select your gender.
                       </p>
                       <input
+                        required
                         type="radio"
                         name="treatment_gender"
                         value="M"
@@ -164,6 +163,7 @@ class FormPage extends React.Component {
                       Male
                       <br />
                       <input
+                        required
                         type="radio"
                         name="treatment_gender"
                         value="F"
@@ -177,8 +177,10 @@ class FormPage extends React.Component {
                         How old were you when you were diagnosed?
                       </p>
                       <input
+                        required
                         type="number"
                         name="treatment_DX_Age"
+                        onChange={this.handleChange}
                         min="18"
                         max="85"
                         style={{
@@ -192,8 +194,10 @@ class FormPage extends React.Component {
                     <div className="question">
                       <p className="question-title">How old are you now?</p>
                       <input
+                        required
                         type="number"
                         name="treatment_age"
+                        onChange={this.handleChange}
                         min="18"
                         max="85"
                         style={{
@@ -223,14 +227,6 @@ class FormPage extends React.Component {
                         marginBottom: "80px"
                       }}
                     /> */}
-                    <input
-                      hidden
-                      checked
-                      readOnly
-                      type="radio"
-                      name="treatment_BMI"
-                      value={22}
-                    />
                   </div>
                 )}
               </div>
@@ -294,23 +290,6 @@ class FormPage extends React.Component {
                   />
                 )}
               </div>
-
-              <input
-                hidden
-                checked
-                readOnly
-                type="radio"
-                name="treatment_DX_country"
-                value="USA"
-              />
-              <input
-                hidden
-                checked
-                readOnly
-                type="radio"
-                name="treatment_DX"
-                value="SCHIZOPHRENIA"
-              />
             </div>
 
             <div
@@ -345,9 +324,11 @@ class FormPage extends React.Component {
               </button>
             </div>
 
-            {this.state.page === num_pages - 1 && (
+            {(this.state.page === num_pages - 4 ||
+              this.state.page === num_pages - 1) && (
               <button
                 type="submit"
+                // onClick={this.handleSubmit}
                 className="startButton"
                 style={{ border: "none", cursor: "pointer" }}
               >

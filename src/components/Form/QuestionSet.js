@@ -10,7 +10,7 @@ function QuestionSet(props) {
     <SliderQuestion
       key={props.start + index + 1}
       index={props.start + index + 1}
-      value={answers[data_names[index]]}
+      value={answers[data_names[index].replace(/\s/g, "")]}
       name={data_names[index].replace(/\s/g, "")}
       text={question}
       saveAnswer={props.saveAnswer}
