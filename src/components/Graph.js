@@ -13,7 +13,6 @@ const data = {
   ],
   datasets: [
     {
-      label: "Estimated decrease in PANSS score",
       data: [7, 6, 4, 3, 3, 1],
       backgroundColor: [
         "rgba(54, 162, 235, 1)",
@@ -32,7 +31,17 @@ function Graph(props) {
     <Bar
       data={data}
       options={{
+        title: {
+          display: true,
+          text: "Estimated Decrease in PANSS score",
+          fontFamily: "Calibri",
+          fontSize: 30,
+          fontColor: "black",
+        },
         maintainAspectRatio: false,
+        legend:{
+          display: false,
+        },
         scales: {
           xAxes: [
             {

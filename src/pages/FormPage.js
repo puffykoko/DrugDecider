@@ -183,12 +183,7 @@ class FormPage extends React.Component {
                         onChange={this.handleChange}
                         min="18"
                         max="85"
-                        style={{
-                          width: 300,
-                          borderRadius: 15,
-                          height: 30,
-                          border: "1px solid #DCDCDC"
-                        }}
+                        className="question-input"
                       />
                     </div>
                     <div className="question">
@@ -200,12 +195,7 @@ class FormPage extends React.Component {
                         onChange={this.handleChange}
                         min="18"
                         max="85"
-                        style={{
-                          width: 300,
-                          borderRadius: 15,
-                          height: 30,
-                          border: "1px solid #DCDCDC"
-                        }}
+                        className="question-input"
                       />
                     </div>
 

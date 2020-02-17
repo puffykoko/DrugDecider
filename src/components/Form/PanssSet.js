@@ -10,9 +10,9 @@ function PanssSet(props) {
     <PanssQuestion
       key={props.start + index + 1}
       index={props.start + index + 1}
-      value={answers["PANSS_" + data_names[index].replace(/\s/g, "")]}
-      name={"PANSS_" + data_names[index].replace(/\s/g, "")}
-      text={data_names[index].toLowerCase()}
+      value={answers["PANSS_" + data_names[index].replace(/\s/g, "").toUpperCase()]}
+      name={"PANSS_" + data_names[index].replace(/\s/g, "").toUpperCase()}
+      text={data_names[index]}
       saveAnswer={props.saveAnswer}
     />
   ));

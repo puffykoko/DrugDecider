@@ -38,16 +38,16 @@ const data3 = [
 ];
 
 const data_names1 = [
-  "BLUNTED AFFECT",
-  "EMOTIONAL WITHDRAWAL",
-  "POOR RAPPORT",
-  "PASSIVE APATHETIC SOCIAL WITHDRAWAL",
-  "LACK OF SPONTANEITY AND FLOW OF CONVERSATION",
-  "MOTOR RETARDATION",
-  "ACTIVE SOCIAL AVOIDANCE",
-  "DELUSIONS",
-  "HALLUCINATORY BEHAVIOUR",
-  "GRANDIOSITY"
+  "Blunted Affect",
+  "Emotional Withdrawal",
+  "Poor Rapport",
+  "Passive Apathetic Social Withdrawal",
+  "Lack of Spotaneity and Flow of Conversation",
+  "Motor Retardation",
+  "Active Social Avoidance",
+  "Delusions",
+  "Hallucinatory Behavior",
+  "Grandiosity"
 ];
 
 const data_names2 = [

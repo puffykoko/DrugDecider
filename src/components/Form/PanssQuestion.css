@@ -1,0 +1,26 @@
+.panss-question-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panss-question-title{
+  max-width: 300px;
+}
+
+.panss-question-input-number{
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border: 0.5px solid grey;
+}
+
+
+@media only screen and (max-width: 600px){
+  .panss-question-title{
+    max-width: 150px;
+  }
+  .panss-question-input-number{
+    width: 50px;
+  }
+}
