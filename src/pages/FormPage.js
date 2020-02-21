@@ -314,8 +314,8 @@ class FormPage extends React.Component {
               </button>
             </div>
 
-            {(this.state.page === num_pages - 4 ||
-              this.state.page === num_pages - 1) && (
+            {
+              (this.state.page === num_pages - 1) && (
               <button
                 type="submit"
                 // onClick={this.handleSubmit}

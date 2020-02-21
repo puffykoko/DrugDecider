@@ -51,29 +51,29 @@ const data_names1 = [
 ];
 
 const data_names2 = [
-  "SUSPICIOUSNESS PERSECUTION",
-  "STEREOTYPED THINKING",
-  "SOMATIC CONCERN",
-  "UNUSUAL THOUGHT CONTENT",
-  "TENSION",
-  "EXCITEMENT",
-  "DEPRESSION",
-  "DISORIENTATION",
-  "ANXIETY",
-  "LACK OF JUDGEMENT AND INSIGHT"
+  "Suspiciousness Persecution",
+  "Stereotyped Thinking",
+  "Somatic Concern",
+  "Unusual Though Content",
+  "Tension",
+  "Excitement",
+  "Depression",
+  "Disorientation",
+  "Anxiety",
+  "Lack of Judgement and Insight",
 ];
 
 const data_names3 = [
-  "CONCEPTUAL DISORGANISATION",
-  "DIFFICULTY IN ABSTRACT THINKING",
-  "MANNERISMS AND POSTURING",
-  "POOR ATTENTION",
-  "PREOCCUPATION",
-  "DISTURBANCE OF VOLITION",
-  "HOSTILITY",
-  "UNCOOPERATIVENESS",
-  "POOR IMPULSE CONTROL",
-  "GUILT FEELINGS"
+  "Conceptual Disorganisation",
+  "Difficulty in Abstract Thinking",
+  "Mannerisms and Posturing",
+  "Poor Attention",
+  "Preoccupation",
+  "Disturbance of Volition",
+  "Hostility",
+  "Uncooperativeness",
+  "Poor Impulse Control",
+  "Guilt Feelings",
 ];
 
 export { data1, data2, data3, data_names1, data_names2, data_names3 };

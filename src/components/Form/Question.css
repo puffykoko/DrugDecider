@@ -7,6 +7,7 @@
 .question-title {
   text-align: left;
   /* border: 1px solid grey; */
+  font-size: calc(8px + 1.5vmin);
 }
 
 .panss {
@@ -26,6 +27,8 @@
   border: 1px solid grey; */
 }
 
+
+
 /* The slider itself */
 .bar {
   -webkit-appearance: none; /* Override default CSS styles */
@@ -38,8 +41,14 @@
   -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
   transition: opacity 0.2s;
   box-sizing: border-box;
-  width: 700px;
-  padding: 0px 50px;
+  width: 100%;
+  padding: 0 5%;
+}
+
+@media only screen and (max-width: 500px) {
+  .slider-text{
+    font-size: 8px;
+  }
 }
 
 /* Mouse-over effects */
@@ -57,6 +66,18 @@
   background: #1b9fff; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
+
+.bar::-webkit-slider-thumb:hover {
+  /* opacity: .8; */
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  border-radius: 10px;
+  background: black; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
 
 .bar::-moz-range-thumb {
   /* opacity: .8; */
