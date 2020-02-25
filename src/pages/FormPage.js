@@ -23,11 +23,24 @@ class FormPage extends React.Component {
 
     let answers = {};
     data_names1.forEach(option => {
-      answers[option] = 4;
-      // answers["PANSS_" + option] = "";
+      let opt = option.replace(/\s/g, "").toUpperCase();
+      answers[opt] = 4;
+      answers["PANSS_" + opt] = "";
     });
-    data_names2.forEach(option => (answers[option] = 4));
-    data_names3.forEach(option => (answers[option] = 4));
+    data_names2.forEach(option => {
+      let opt = option.replace(/\s/g, "").toUpperCase();
+      answers[opt] = 4;
+      answers["PANSS_" + opt] = "";
+    });
+    data_names3.forEach(option => {
+      let opt = option.replace(/\s/g, "").toUpperCase();
+      answers[opt] = 4;
+      answers["PANSS_" + opt] = "";
+    });
+
+    answers["treatment_gender"] = "";
+    answers["treatment_age"] = "";
+    answers["treatment_DX_Age"] = "";
 
     answers["treatment_BMI"] = 22;
     answers["bp"] = 110;
@@ -77,7 +90,7 @@ class FormPage extends React.Component {
   };
 
   handleChange = e => {
-    e.preventDefault();
+    // e.preventDefault();
     let copy = this.state.answers;
     if (
       e.target.name === "treatment_DX_Age" ||
@@ -157,6 +170,7 @@ class FormPage extends React.Component {
                         required
                         type="radio"
                         name="treatment_gender"
+                        checked={this.state.answers["treatment_gender"] === "M"}
                         value="M"
                         onChange={this.handleChange}
                       />{" "}
@@ -166,6 +180,7 @@ class FormPage extends React.Component {
                         required
                         type="radio"
                         name="treatment_gender"
+                        checked={this.state.answers["treatment_gender"] === "F"}
                         value="F"
                         onChange={this.handleChange}
                       />{" "}
@@ -180,6 +195,7 @@ class FormPage extends React.Component {
                         required
                         type="number"
                         name="treatment_DX_Age"
+                        value={this.state.answers["treatment_DX_Age"]}
                         onChange={this.handleChange}
                         min="18"
                         max="85"
@@ -192,6 +208,7 @@ class FormPage extends React.Component {
                         required
                         type="number"
                         name="treatment_age"
+                        value={this.state.answers["treatment_age"]}
                         onChange={this.handleChange}
                         min="18"
                         max="85"
@@ -314,8 +331,7 @@ class FormPage extends React.Component {
               </button>
             </div>
 
-            {
-              (this.state.page === num_pages - 1) && (
+            {this.state.page === num_pages - 1 && (
               <button
                 type="submit"
                 // onClick={this.handleSubmit}
