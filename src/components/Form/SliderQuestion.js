@@ -1,7 +1,5 @@
 import React from "react";
-import "rc-slider/assets/index.css";
-import "./Question.css";
-
+import "./SliderQuestion.css";
 
 const slider_options_text = [
 "Strongly Disagree",
@@ -35,14 +33,7 @@ function SliderQuestion(props) {
           style={{}}
         />
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(7, 1fr)",
-            textAlign: "center",
-            fontSize: "12px",
-            width: "100%",
-            padding: 0,
-          }}
+          className = "slider-text-container"
         >
             {slider_options}
         </div>

@@ -133,7 +133,7 @@ class FormPage extends React.Component {
 
     if (!this.state.results) {
       return (
-        <div className="content">
+        <div>
           <form
             onSubmit={this.handleSubmit}
             style={{

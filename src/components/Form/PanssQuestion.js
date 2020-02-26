@@ -5,16 +5,15 @@ import "rc-slider/assets/index.css";
 import "./PanssQuestion.css";
 
 function PanssQuestion(props) {
-  // const sliderName = `q${props.index}`;
+  
   return (
     <div
-      className="question panss-question-container"
+      className="panss-question-container"
     >
       <label>
         <p className="panss-question-title"> {props.text} </p>
       </label>
       <input
-        // required
         type="number"
         name={props.name}
         value={props.value}

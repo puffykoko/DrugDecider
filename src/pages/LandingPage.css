@@ -1,7 +1,7 @@
-.content {
+.landing-page-content {
   justify-content: space-around;
   align-items: center;
-  margin: 15vh 0 10vh 0;
+  margin: 0;
   /* //border: 1px solid grey; */
 }
 
@@ -70,7 +70,7 @@
 
 @media only screen and (max-width: 800px) {
   .content {
-    margin: 5vh 0;
+    //margin: 5vh 0;
   }
   .leftContent {
     width: 90%;

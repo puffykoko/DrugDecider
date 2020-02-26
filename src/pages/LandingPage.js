@@ -6,7 +6,7 @@ import Graph from "../components/Graph";
 
 function LandingPage() {
   return (
-    <div className="content flex">
+    <div className="landing-page-content flex">
       <div className="leftContent">
         <div className="text">
           <h2 className="largeText">Find what works for you.</h2>

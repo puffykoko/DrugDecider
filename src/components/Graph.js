@@ -35,8 +35,9 @@ function Graph(props) {
           display: true,
           text: "Estimated Decrease in PANSS score",
           fontFamily: "Calibri",
-          fontSize: 30,
+          fontSize: 20,
           fontColor: "black",
+          fontStyle: "normal"
         },
         maintainAspectRatio: false,
         legend:{

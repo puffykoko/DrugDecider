@@ -7,11 +7,13 @@
   padding-top: 50px;
   justify-content: space-between;
   align-items: flex-end;
+  margin: 0;
 }
 
 .logoGroup {
   width: 30vw;
   align-items: center;
+  flex-wrap: nowrap;
 }
 
 .ddLogo {
@@ -21,7 +23,7 @@
 
 .headerLink {
   padding: calc(1vmin + 2px) calc(2vmin + 5px);
-  font-size: calc(1vw + 5px);
+  font-size: calc(15px + 0.5vw);
 }
 
 @media only screen and (max-width: 800px) {
