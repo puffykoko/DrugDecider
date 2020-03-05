@@ -42,11 +42,11 @@ const data_names1 = [
   "Emotional Withdrawal",
   "Poor Rapport",
   "Passive Apathetic Social Withdrawal",
-  "Lack of Spotaneity and Flow of Conversation",
+  "Lack of Spontaneity and Flow of Conversation",
   "Motor Retardation",
   "Active Social Avoidance",
   "Delusions",
-  "Hallucinatory Behavior",
+  "Hallucinatory Behaviour",
   "Grandiosity"
 ];
 
@@ -54,13 +54,13 @@ const data_names2 = [
   "Suspiciousness Persecution",
   "Stereotyped Thinking",
   "Somatic Concern",
-  "Unusual Though Content",
+  "Unusual Thought Content",
   "Tension",
   "Excitement",
   "Depression",
   "Disorientation",
   "Anxiety",
-  "Lack of Judgement and Insight",
+  "Lack of Judgement and Insight"
 ];
 
 const data_names3 = [
@@ -73,7 +73,7 @@ const data_names3 = [
   "Hostility",
   "Uncooperativeness",
   "Poor Impulse Control",
-  "Guilt Feelings",
+  "Guilt Feelings"
 ];
 
 export { data1, data2, data3, data_names1, data_names2, data_names3 };
