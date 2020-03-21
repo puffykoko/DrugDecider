@@ -14,9 +14,9 @@ function Footer() {
         <Link to="/privacy" className="footerLink">
           Privacy Policy
         </Link>
-        <Link to="/contact" className="footerLink">
+        <a className="footerLink" href="mailto:arianaanderson@mednet.ucla.edu">
           Contact Us
-        </Link>
+        </a>
         <Link to="/faq" className="footerLink">
           FAQ
         </Link>

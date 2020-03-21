@@ -1,0 +1,8 @@
+.faq-text{
+  font-size: calc(10px + 1.5vmin);
+  margin-bottom: 10px;
+}
+
+.answer-text{
+  font-size: calc(10px + 1vmin);
+}

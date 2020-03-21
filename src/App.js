@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";
 import ResultsPage from "./pages/ResultsPage";
 import FormPage from "./pages/FormPage";
+import FAQPage from "./pages/FAQPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/" component={LandingPage} />
           <Route path="/results" component={ResultsPage} />
           <Route path="/form" component={FormPage} />
+          <Route path="/faq" component={FAQPage} />
           {/* <Route path="/about" component={AboutPage} /> */}
         </div>
         <Footer />
