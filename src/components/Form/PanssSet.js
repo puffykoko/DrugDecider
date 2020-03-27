@@ -1,6 +1,8 @@
 import React from "react";
 import PanssQuestion from "./PanssQuestion";
 
+const disclaimer = "Please note: Medication response predictions require symptom scores from the PANSS, which must be performed by a clinician who interviews the patient. These scores are used to evaluate how symptomatic a patient may be in several domains. A higher score implies more severe symptoms, while a lower score implies more mild.";
+
 function PanssSet(props) {
   const data = props.data;
   const data_names = props.data_names;
@@ -26,6 +28,9 @@ function PanssSet(props) {
         alignItems: "center"
       }}
     >
+      <div className="disclaimer">
+        {disclaimer}
+      </div>
       {mapped_data}
     </div>
   );

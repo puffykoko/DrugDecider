@@ -73,7 +73,6 @@ class FormPage extends React.Component {
   nextPage = e => {
     e.preventDefault();
 
-    console.log(this.state.answers);
     this.setState(state => ({
       page: state.page < state.numPages - 1 ? state.page + 1 : state.page
     }));
@@ -158,11 +157,16 @@ class FormPage extends React.Component {
           >
             <div className="FormContainer">
               <h1> Basic Information </h1>
+
               <ProgressBar numBars={num_pages} curBar={this.state.page} />
-              <div style={{ marginTop: "10vh" }}>
+
+              <div style={{ marginTop: "10vh",   fontSize: "calc(10px + 1vmin)" }}>
                 {this.state.page === 0 && (
                   <div>
-                    <div className="question">
+                    <p >
+                      Disclaimer:  Drug Decider technology uses statistical models created on historical clinical trials.  Any predictions on medication response are meaningless without first being filtered through a licensed medical professional who can evaluate a patient holistically.  Artificial intelligence models are never a substitute for clinical care.
+                    </p>
+                    <div style={{marginTop: "7.5vh"}} className="question">
                       <p className="question-title">
                         Please select your gender.
                       </p>
@@ -189,7 +193,7 @@ class FormPage extends React.Component {
                     </div>
                     <div className="question">
                       <p className="question-title">
-                        How old were you when you were diagnosed?
+                        How old were you when you were diagnosed with Schizophrenia?
                       </p>
                       <input
                         required

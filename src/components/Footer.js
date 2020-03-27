@@ -8,9 +8,10 @@ function Footer() {
     <div className="customFooter flex" id="footer">
       <hr className="customFooter__divider" />
       <div className="flex customFooter__links">
-        <Link to="/research" className="footerLink">
+      
+        <a className="footerLink" href="https://www.semel.ucla.edu/profile/ariana-anderson-phd">
           Our Research
-        </Link>
+        </a>
         <Link to="/privacy" className="footerLink">
           Privacy Policy
         </Link>
