@@ -21,6 +21,7 @@ function App() {
           <Route path="/results" component={ResultsPage} />
           <Route path="/form" component={FormPage} />
           <Route path="/faq" component={FAQPage} />
+
           {/* <Route path="/about" component={AboutPage} /> */}
         </div>
         <Footer />
