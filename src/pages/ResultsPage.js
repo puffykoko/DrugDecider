@@ -23,7 +23,7 @@ class ResultsPage extends React.Component {
 
   fetchData = async () => {
     const info = await fetch(
-      "https://drugdecidertest.herokuapp.com/api/v1/druginfo",
+      "api.drugdecider.com/api/v1/druginfo",
       {
         method: "GET"
       }
