@@ -164,7 +164,7 @@ class FormPage extends React.Component {
                 {this.state.page === 0 && (
                   <div>
                     <p >
-                      Disclaimer:  Drug Decider technology uses statistical models created on historical clinical trials.  Any predictions on medication response are meaningless without first being filtered through a licensed medical professional who can evaluate a patient holistically.  Artificial intelligence models are never a substitute for clinical care.
+                      Disclaimer:  Drug Decider technology uses statistical models created on historical clinical trials.  Any predictions on medication response are meaningless without first being filtered through a licensed medical professional who can evaluate a patient holistically.  Artificial intelligence models are never a substitute for clinical care.  Always speak to your doctor before changing any prescribed medications.
                     </p>
                     <div style={{marginTop: "7.5vh"}} className="question">
                       <p className="question-title">
