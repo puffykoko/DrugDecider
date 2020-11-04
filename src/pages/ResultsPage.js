@@ -5,7 +5,7 @@ import ResultsGraph from "../components/ResultsGraph";
 import "./ResultsPage.css";
 
 const text =
-  "Based on your responses, there is a high chance that antipsychotic medicine would be effective for you. Please consult your doctor for additional advice.";
+  "Drug Decider has simulated this patients' experience in the clinical trial database.  Please speak to your doctor if you have any concerns about your prescribed medications.  Never discontinue or change your prescribed medications without your doctor's recommendation.";
 
 class ResultsPage extends React.Component {
   constructor(props) {
