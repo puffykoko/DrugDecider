@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     question: "Is this reliable?",
-    answer: "Drug Decider technology uses statistical models created on historical clinical trials.  Any predictions of medication response for new patients are meaningless without first being filtered through a licensed medical professional who can evaluate a patient holistically.Artificial intelligence models are never a substitute for clinical care. Ask your doctor on how to best improve your treatment."
+    answer: "Drug Decider technology uses statistical models created on historical clinical trials.  Any predictions of medication response for new patients are meaningless without first being filtered through a licensed medical professional who can evaluate a patient holistically.  Artificial intelligence models are never a substitute for clinical care. Ask your doctor on how to best improve your treatment."
   },
   {
     question: "Who makes Drug Decider?",
@@ -20,8 +20,8 @@ const faqs = [
     answer: "Drug Decider machine learning models are currently trained on historical clinical trials of 3,647 patients with Schizophrenia.  Our statistical models use the Placebo Quantified Response Score which first predicts a patients’ placebo risk, and then uses this risk to predict a patients’ medication response in a double-blind clinical trial.",
   },
   {
-    question: "What about Depression medications?",
-    answer: "We are expanding our statistical models to study major depressive disorder.  Because of the large number of patients needed to learn these sophisticated patterns, we will release models for new disorders- including antidepressants- after we have acquired enoughpatient records to make them reliable."
+    question: "What about Depression medications or other disorders?",
+    answer: "We are expanding our statistical models to study major depressive disorder.  Because of the large number of patients needed to learn these sophisticated patterns, we will release models for new disorders- including antidepressants- after we have acquired enough patient records to make them reliable."
   },
   {
     question: "Who do I contact for more information?",
