@@ -40,7 +40,7 @@ function ResultsGraph(props) {
     labels: labels,
     datasets: [
       {
-        label: "Estimated decrease in PANSS score",
+        label: "Estimated improvement in PANSS score",
         data: values,
         backgroundColor: [
           "rgba(54, 162, 235, 1)",

@@ -7,6 +7,11 @@ const faqs = [
     question: "What is Drug Decider?",
     answer: "Drug Decider algorithms predict how a patient would have responded to different medications and placebo treatment in clinical trials.  By comparing these predictions, a patient can better understand how their unique demographics and symptom profiles may make them a better responder to some treatments than others."
   },
+    {
+    question: "How does it work?",
+    answer: " Our current models are designed for Schizophrenia, but we are expanding to other disorders.  A clinician would evaluate a patient's symptoms using the PANSS (Positive and Negative Syndrome Scale).  Drug Decider statistical models first predict how a patient would have responded to a placebo intervention by creating a Placebo Quantified Response Score (PQRS), using Schizophrenia clinical trial databases.  The PQRS is that individual patient's expected placebo response, which captures general therapeutic effects associated with an intervention. The individual PANSS symptoms, the PQRS, and demographic information next predict a patient's individual response to active medications."
+              },
+              
   {
     question: "Is this reliable?",
     answer: "Drug Decider technology uses statistical models created on historical clinical trials.  Any predictions of medication response for new patients are meaningless without first being filtered through a licensed medical professional who can evaluate a patient holistically.  Artificial intelligence models are never a substitute for clinical care. Ask your doctor on how to best improve your treatment.  Never change or discontinue treatment withot your doctor's consultation."
